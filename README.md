@@ -23,7 +23,7 @@ We inject external information into the prompt under an `[INFO]` tag, and train 
 .
 ├── fine_tune.py         # Main training script (your current code)
 ├── requirements.txt # Dependencies (see below)
-└── README.md        # You're here!
+├── README.md        # You're here!
 └── LICENSE       # MIT License
 ```
 
