@@ -2,6 +2,7 @@ from transformers import AutoTokenizer, AutoModelForCausalLM, TrainingArguments,
 from datasets import load_dataset, DatasetDict
 from datasets import Dataset, DatasetDict
 import torch
+import os
 
 # Load tokenizer and model
 model_name = "gpt2"
@@ -65,3 +66,8 @@ trainer = Trainer(
 
 # Start training
 trainer.train()
+
+# save model
+os.makedirs("fine_tuned", exist_ok=True)
+torch.save(trainer.model.state_dict(), "fine_tuned/model.bin")
+print("model saved in fine_tuned/model.bin")
